@@ -10,6 +10,9 @@
     height: 100vh;
     display: flex;
     box-shadow: -8px 0 8px $bg-black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
     &__header {
         color: $white;
         margin: 2rem 2rem 1.125rem 2rem;
@@ -55,7 +58,7 @@
         border-radius: 15px;
         padding: 0.25rem 0.75rem;
         border: 1px $white solid;
-        &:focus {
+        &-active {
             border: none;
             color: $font-black;
             font-weight: 800;

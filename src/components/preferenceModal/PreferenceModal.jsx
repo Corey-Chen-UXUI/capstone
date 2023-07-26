@@ -1,6 +1,11 @@
+import React, { useEffect, useState } from "react";
 import "./preferenceModal.scss";
 
 function PreferenceModal() {
+    const [selectedFiltereds, setSelectedFilters] = useState([]);
+    // const [filteredItems, setFilteredItems] = useState(items);
+    let filters = ["chicken", "pork", "shrimp", "beef", "fish"];
+
     return (
         <div>
             <section className="preference">
@@ -10,17 +15,21 @@ function PreferenceModal() {
                 <section className="preference__content">
                     <h2 className="preference__title">What main ingredient do you like?</h2>
                     <section className="preference__filters">
-                        <button type="checkbox" className="preference__filter">
+                        <button name="likes" className="preference__filter">
                             Chicken
                         </button>
-                        <button type="checkbox" className="preference__filter">
+                        <button name="likes" className="preference__filter">
                             Pork
                         </button>
-                        <button type="checkbox" className="preference__filter">
+                        <button name="likes" className="preference__filter">
                             Shrimp
                         </button>
-                        <button className="preference__filter">Beef</button>
-                        <button className="preference__filter">Fish</button>
+                        <button name="likes" className="preference__filter">
+                            Beef
+                        </button>
+                        <button name="likes" className="preference__filter">
+                            Fish
+                        </button>
                     </section>
                     {/* allergic section */}
                     <h2 className="preference__title">What are you allergic to?</h2>
