@@ -1,0 +1,25 @@
+@use "../../styles/index.scss" as *;
+.welcome {
+    display: flex;
+    background-image: url("../../assets/images/cover-pic1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    &__border {
+        width: calc(100% - 2rem);
+
+        margin: 1rem;
+        border: 1px solid white;
+    }
+    &__title {
+        // display: inline-block;
+        color: white;
+        margin-top: 50vh;
+
+        text-align: center;
+        font-family: "FleurDeleah";
+        font-size: 1.5rem;
+        text-shadow: 10px 10px 15px black;
+    }
+}
