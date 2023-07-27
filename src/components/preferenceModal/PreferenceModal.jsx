@@ -2,9 +2,32 @@ import React, { useEffect, useState } from "react";
 import "./preferenceModal.scss";
 
 function PreferenceModal() {
-    const [selectedFiltereds, setSelectedFilters] = useState([]);
-    // const [filteredItems, setFilteredItems] = useState(items);
+    const [selectedFilters, setSelectedFilters] = useState([]);
+    // const [filteredRecipes, setFilteredRecipes] = useState(recipes);
     let filters = ["chicken", "pork", "shrimp", "beef", "fish"];
+    // useEffect(() => {
+    //     axios
+    //         .get("http://localhost:5050/recipes/")
+    //         .then((response) => {
+    //             console.log(response.data);
+    //             setFilteredRecipes(response.data);
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         });
+    // }, []);
+
+    const handleFilterButtonClick = (selectedIngredient) => {
+        if (selectedFilters.includes(selectedIngredient)) {
+            let filters = selectedFilters.filter((el) => el !== selectedIngredient);
+            setSelectedFilters(filters);
+        } else {
+            setSelectedFilters([...selectedFilters, selectedIngredient]);
+        }
+    };
+    // useEffect(() => {
+    //     filterRecipes();
+    // }, [selectedFilters]);
 
     return (
         <div>
@@ -15,10 +38,17 @@ function PreferenceModal() {
                 <section className="preference__content">
                     <h2 className="preference__title">What main ingredient do you like?</h2>
                     <section className="preference__filters">
-                        <button name="likes" className="preference__filter">
-                            Chicken
-                        </button>
-                        <button name="likes" className="preference__filter">
+                        {filters.map((category, idx) => (
+                            <button
+                                name="likes"
+                                className={`preference__filter${selectedFilters?.includes(category) ? "-active" : ""}`}
+                                onClick={() => handleFilterButtonClick(category)}
+                                key={`filters-${idx}`}>
+                                {category}
+                            </button>
+                        ))}
+
+                        {/* <button name="likes" className="preference__filter">
                             Pork
                         </button>
                         <button name="likes" className="preference__filter">
@@ -29,7 +59,7 @@ function PreferenceModal() {
                         </button>
                         <button name="likes" className="preference__filter">
                             Fish
-                        </button>
+                        </button> */}
                     </section>
                     {/* allergic section */}
                     <h2 className="preference__title">What are you allergic to?</h2>

@@ -58,8 +58,11 @@
         border-radius: 15px;
         padding: 0.25rem 0.75rem;
         border: 1px $white solid;
+        font-weight: 800;
         &-active {
-            border: none;
+            border-radius: 15px;
+            padding: 0.25rem 0.75rem;
+            border: 1px $primary-yellow solid;
             color: $font-black;
             font-weight: 800;
             background-color: $primary-yellow;

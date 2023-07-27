@@ -2,6 +2,8 @@ import "./recipeDetails.scss";
 import { useState } from "react";
 import chevron from "../../assets/images/icons/chevron.png";
 function RecipeDetails() {
+    const apiUrl = "http://localhost:5050/recipes/";
+
     // const [opened, setOpened] = useState(null);
     // const toggle = (event) => {
     //     if (opened == event) {
