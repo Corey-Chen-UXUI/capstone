@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import WeeklyPlan from "../components/weeklyPlan/WeeklyPlan";
 
-function HomePage() {
+function HomePage({ setGroceryList }) {
     //  allRecipes.length > 0
     return (
         <div>
-            <WeeklyPlan />
+            <WeeklyPlan setGroceryList={setGroceryList} />
         </div>
     );
 }

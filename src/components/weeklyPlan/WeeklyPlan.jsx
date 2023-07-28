@@ -5,9 +5,10 @@ import recipe1 from "../../assets/images/recipe/skewer.jpg";
 import PreferenceModal from "../preferenceModal/PreferenceModal";
 import axios from "axios";
 
-function WeeklyPlan() {
+function WeeklyPlan({ setGroceryList }) {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [allRecipes, setAllRecipes] = useState([]);
+    const [selectedAllergy, setSelectedAllergy] = useState([]);
 
     useEffect(() => {
         axios
@@ -43,14 +44,24 @@ function WeeklyPlan() {
                 console.log(recipe.ingredients.includes(ingredient));
             }
         }
+        //allergy remove
+        // for (let allergies of selectedAllergy) {
+        //     for (let recipe of recipes) {
+        //         if (recipe.ingredients.includes(allergies)) {
+        //             filteredRecipes.remove(recipe);
+        //         }
+        //     }
+        // }
+        localStorage.setItem("recipes", JSON.stringify(filteredRecipes));
         return filteredRecipes;
     };
-
-    console.log(allRecipes);
-    console.log(selectedFilters);
-    if (allRecipes.length > 0) {
-        console.log(filterRecipes(selectedFilters, allRecipes));
-    }
+    useEffect(() => {
+        if (allRecipes.length > 0) {
+            console.log(filterRecipes(selectedFilters, allRecipes));
+        }
+    }, [selectedFilters]);
+    // console.log(allRecipes);
+    // console.log(selectedFilters);
 
     return (
         <div>
