@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import PreferenceModal from "../components/preferenceModal/PreferenceModal";
+import WeeklyPlan from "../components/weeklyPlan/WeeklyPlan";
 
 function HomePage() {
-    const apiURL = "http://localhost:5050/recipes/recipes-all";
+    //  allRecipes.length > 0
     return (
         <div>
-            <PreferenceModal />
+            <WeeklyPlan />
         </div>
     );
 }

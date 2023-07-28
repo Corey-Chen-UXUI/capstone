@@ -4,6 +4,7 @@ import WelcomePage from "./pages/WelcomePage";
 import HomePage from "./pages/HomePage";
 import RecipeDetailPage from "./pages/RecipeDetailPage";
 import TestPage from "./pages/TestPage";
+import GroceryListPage from "./pages/GroceryListPage";
 import axios from "axios";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                     <Route path="recipes/:recipeId" element={<RecipeDetailPage />}></Route>
                     <Route path="home" element={<Navigate to="/" />}></Route>
                     <Route path="/test" element={<TestPage />}></Route>
+                    <Route path="/grocery" element={<GroceryListPage />}></Route>
                 </Routes>
             </div>
         </BrowserRouter>

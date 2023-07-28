@@ -1,33 +1,36 @@
 import React, { useEffect, useState } from "react";
 import "./preferenceModal.scss";
 
-function PreferenceModal() {
-    const [selectedFilters, setSelectedFilters] = useState([]);
-    // const [filteredRecipes, setFilteredRecipes] = useState(recipes);
+function PreferenceModal({ handleFilterButtonClick, selectedFilters }) {
+    const [filteredRecipes, setFilteredRecipes] = useState([]);
     let filters = ["chicken", "pork", "shrimp", "beef", "fish"];
-    // useEffect(() => {
-    //     axios
-    //         .get("http://localhost:5050/recipes/")
-    //         .then((response) => {
-    //             console.log(response.data);
-    //             setFilteredRecipes(response.data);
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // }, []);
 
-    const handleFilterButtonClick = (selectedIngredient) => {
-        if (selectedFilters.includes(selectedIngredient)) {
-            let filters = selectedFilters.filter((el) => el !== selectedIngredient);
-            setSelectedFilters(filters);
-        } else {
-            setSelectedFilters([...selectedFilters, selectedIngredient]);
-        }
-    };
-    // useEffect(() => {
-    //     filterRecipes();
-    // }, [selectedFilters]);
+    //useEffect Below: when there is any change to [selectedFilters] and then it will run filtereRecipes();
+
+    // const testRecipe = allRecipes[0];
+    // console.log(testRecipe.ingredients);
+
+    // //create a function return boolean if recipe has given ingredient or not
+    // const hasOneIngredient = (ingredient, recipe) => {
+    //     return recipe.ingredients.includes(ingredient);
+    // };
+
+    //filter is basically the selectedFilter
+
+    //based on the selectedFilter we go through the api list
+    // const filterRecipes = () => {
+    //     if (selectedFilters.length > 0) {
+    //         let tempRecipes = selectedFilters.map((selectedIngredient) => {
+    //             let temp = allRecipes.filter((recipe) => allRecipes.main_ingredient === selectedIngredient);
+    //             return temp;
+    //             console.log(temp);
+    //         });
+    //         setFilteredRecipes(tempRecipes.flat());
+    //     } else {
+    //         setFilteredRecipes([...allRecipes]);
+    //     }
+    //     console.log(filteredRecipes);
+    // };
 
     return (
         <div>
@@ -38,15 +41,26 @@ function PreferenceModal() {
                 <section className="preference__content">
                     <h2 className="preference__title">What main ingredient do you like?</h2>
                     <section className="preference__filters">
-                        {filters.map((category, idx) => (
+                        {filters.map((ingredient, idx) => (
                             <button
                                 name="likes"
-                                className={`preference__filter${selectedFilters?.includes(category) ? "-active" : ""}`}
-                                onClick={() => handleFilterButtonClick(category)}
+                                className={`preference__filter${
+                                    selectedFilters?.includes(ingredient) ? "-active" : ""
+                                }`}
+                                onClick={() => handleFilterButtonClick(ingredient)}
                                 key={`filters-${idx}`}>
-                                {category}
+                                {ingredient}
                             </button>
                         ))}
+
+                        {/* testbelow */}
+                        {filteredRecipes.map((recipes, idx) => (
+                            <div key={`recipes-${idx}`} className="item">
+                                <p>{filteredRecipes.name}</p>
+                                <p className="category">{filteredRecipes.steps}</p>
+                            </div>
+                        ))}
+                        {/* end of test */}
 
                         {/* <button name="likes" className="preference__filter">
                             Pork

@@ -1,0 +1,49 @@
+@use "../../styles/index" as *;
+
+.calendar {
+    background-color: $bg-black;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 1rem;
+    row-gap: 2rem;
+    @include tablet {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    &__header {
+        padding: 1rem 1rem 1rem 1.5rem;
+        background-color: $header-black;
+        color: $white;
+        font-weight: 600;
+        font-size: 1.625rem;
+        box-shadow: 5px 5px 5px black;
+        position: fixed;
+        width: 100%;
+    }
+    &__day {
+        display: flex;
+        flex-direction: column;
+
+        &-title {
+            color: $white;
+            font-weight: 400;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+    }
+    &__recipes {
+        display: flex;
+        column-gap: 1rem;
+        @include tablet {
+            column-gap: 2.5rem;
+        }
+    }
+    &__recipe {
+        object-fit: cover;
+        object-position: center;
+        width: 29.5vw;
+        height: 29vw;
+        border-radius: 15px;
+    }
+}

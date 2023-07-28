@@ -4,3 +4,11 @@ $bg-black: #151515;
 $header-black: #272727;
 $font-black: #000;
 $white: #fff;
+
+$tablet: 768px;
+
+@mixin tablet {
+    @media only screen and (min-width: $tablet) {
+        @content;
+    }
+}
