@@ -3,34 +3,7 @@ import "./preferenceModal.scss";
 
 function PreferenceModal({ handleFilterButtonClick, selectedFilters }) {
     const [filteredRecipes, setFilteredRecipes] = useState([]);
-    let filters = ["chicken", "pork", "shrimp", "beef", "fish"];
-
-    //useEffect Below: when there is any change to [selectedFilters] and then it will run filtereRecipes();
-
-    // const testRecipe = allRecipes[0];
-    // console.log(testRecipe.ingredients);
-
-    // //create a function return boolean if recipe has given ingredient or not
-    // const hasOneIngredient = (ingredient, recipe) => {
-    //     return recipe.ingredients.includes(ingredient);
-    // };
-
-    //filter is basically the selectedFilter
-
-    //based on the selectedFilter we go through the api list
-    // const filterRecipes = () => {
-    //     if (selectedFilters.length > 0) {
-    //         let tempRecipes = selectedFilters.map((selectedIngredient) => {
-    //             let temp = allRecipes.filter((recipe) => allRecipes.main_ingredient === selectedIngredient);
-    //             return temp;
-    //             console.log(temp);
-    //         });
-    //         setFilteredRecipes(tempRecipes.flat());
-    //     } else {
-    //         setFilteredRecipes([...allRecipes]);
-    //     }
-    //     console.log(filteredRecipes);
-    // };
+    let filters = ["Chicken", "Pork", "Shrimp", "Beef", "Fish", "Vegi"];
 
     return (
         <div>
@@ -61,19 +34,6 @@ function PreferenceModal({ handleFilterButtonClick, selectedFilters }) {
                             </div>
                         ))}
                         {/* end of test */}
-
-                        {/* <button name="likes" className="preference__filter">
-                            Pork
-                        </button>
-                        <button name="likes" className="preference__filter">
-                            Shrimp
-                        </button>
-                        <button name="likes" className="preference__filter">
-                            Beef
-                        </button>
-                        <button name="likes" className="preference__filter">
-                            Fish
-                        </button> */}
                     </section>
                     {/* allergic section */}
                     <h2 className="preference__title">What are you allergic to?</h2>

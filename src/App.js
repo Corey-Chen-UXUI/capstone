@@ -5,7 +5,6 @@ import HomePage from "./pages/HomePage";
 import RecipeDetailPage from "./pages/RecipeDetailPage";
 import TestPage from "./pages/TestPage";
 import GroceryListPage from "./pages/GroceryListPage";
-import axios from "axios";
 
 function App() {
     // const baseURL = "http://localhost:5050/recipes";
