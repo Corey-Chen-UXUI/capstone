@@ -19,9 +19,7 @@ function WeeklyPlan() {
                 console.log(error);
             });
     }, []);
-    // useEffect(() => {
-    //     filterRecipes();
-    // }, [selectedFilters]);
+
     const handleFilterButtonClick = (selectedIngredient) => {
         console.log(selectedIngredient);
         if (selectedFilters.includes(selectedIngredient)) {
