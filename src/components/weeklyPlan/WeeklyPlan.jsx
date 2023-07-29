@@ -45,13 +45,13 @@ function WeeklyPlan({ setGroceryList }) {
             }
         }
         //allergy remove
-        // for (let allergies of selectedAllergy) {
-        //     for (let recipe of recipes) {
-        //         if (recipe.ingredients.includes(allergies)) {
-        //             filteredRecipes.remove(recipe);
-        //         }
-        //     }
-        // }
+        for (let allergies of selectedAllergy) {
+            for (let recipe of recipes) {
+                if (recipe.ingredients.includes(allergies)) {
+                    filteredRecipes.remove(recipe);
+                }
+            }
+        }
         localStorage.setItem("recipes", JSON.stringify(filteredRecipes));
         return filteredRecipes;
     };
@@ -65,7 +65,11 @@ function WeeklyPlan({ setGroceryList }) {
 
     return (
         <div>
-            <PreferenceModal handleFilterButtonClick={handleFilterButtonClick} selectedFilters={selectedFilters} />
+            <PreferenceModal
+                handleFilterButtonClick={handleFilterButtonClick}
+                selectedFilters={selectedFilters}
+                selectedAllergy={selectedAllergy}
+            />
             <h1 className="calendar__header">Weekly Menu</h1>
             <section className="calendar">
                 <section className="calendar__day">

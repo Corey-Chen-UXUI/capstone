@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./preferenceModal.scss";
 
-function PreferenceModal({ handleFilterButtonClick, selectedFilters }) {
+function PreferenceModal({ handleFilterButtonClick, selectedFilters, selectedAllergy, onCancel }) {
     const [filteredRecipes, setFilteredRecipes] = useState([]);
 
-    let filters = ["Chicken", "Pork", "Shrimp", "Beef", "Fish", "Vegi"];
+    let filters = ["Chicken", "Pork", "Beef", "Fish", "Vegi"];
     let allergy = ["Shrimp", "Peach", "Peanuts or Nuts"];
 
     return (
         <div>
+            <section className="overlay" onClick={onCancel}></section>
             <section className="preference">
                 <h1 className="preference__header">Preference</h1>
                 <section className="preference__image"></section>
@@ -27,32 +28,27 @@ function PreferenceModal({ handleFilterButtonClick, selectedFilters }) {
                                 {ingredient}
                             </button>
                         ))}
-
-                        {/* testbelow */}
-                        {filteredRecipes.map((recipes, idx) => (
-                            <div key={`recipes-${idx}`} className="item">
-                                <p>{filteredRecipes.name}</p>
-                                <p className="category">{filteredRecipes.steps}</p>
-                            </div>
-                        ))}
-                        {/* end of test */}
                     </section>
                     {/* allergic section */}
                     <h2 className="preference__title">What are you allergic to?</h2>
                     <section className="preference__filters">
-                        <button type="checkbox" className="preference__filter">
-                            Shrimp
-                        </button>
-                        <button type="checkbox" className="preference__filter">
-                            Peach
-                        </button>
-                        <button type="checkbox" className="preference__filter">
-                            Peanuts or nuts
-                        </button>
+                        {allergy.map((ingredient, idx) => (
+                            <button
+                                name="allergy"
+                                className={`preference__filter${
+                                    selectedFilters?.includes(ingredient) ? "-active" : ""
+                                }`}
+                                onClick={() => handleFilterButtonClick(ingredient)}
+                                key={`allergy-${idx}`}>
+                                {ingredient}
+                            </button>
+                        ))}
                     </section>
                 </section>
                 <section className="preference__content">
-                    <button className="preference__cta">Save setting</button>
+                    <button className="preference__cta" onClick={onCancel}>
+                        Save setting
+                    </button>
                 </section>
             </section>
         </div>

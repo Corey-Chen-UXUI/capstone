@@ -1,0 +1,15 @@
+@use "../../styles/index" as *;
+
+.navbar {
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: $header-black;
+    width: 100%;
+    &__text {
+        color: white;
+    }
+}
