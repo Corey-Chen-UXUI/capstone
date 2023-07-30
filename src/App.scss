@@ -1,3 +1,5 @@
+@use "./styles/index.scss" as *;
+
 // reset
 * {
     margin: 0;
@@ -12,4 +14,25 @@
 //universal style
 p {
     line-height: 1.25rem;
+}
+
+.header {
+    padding: 1rem 1rem 1rem 1.5rem;
+    background-color: $header-black;
+    color: $white;
+    font-weight: 600;
+    font-size: 1.625rem;
+    box-shadow: 5px 5px 5px black;
+    position: fixed;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    clip: react(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1ppx;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }

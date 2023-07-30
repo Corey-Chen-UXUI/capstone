@@ -1,0 +1,25 @@
+@use "../../styles/index.scss" as *;
+.checkbox {
+    // display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 1px;
+    margin-right: 1rem;
+
+    &__text {
+        display: inline;
+    }
+}
+
+.checkbox--active {
+    background-color: $primary-yellow;
+    border: none;
+}
+.checkbox__label {
+    display: flex;
+    margin-bottom: 3px;
+    margin-bottom: 1.25rem;
+    margin-left: 0.5rem;
+}

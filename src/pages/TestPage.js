@@ -1,10 +1,10 @@
 import React from "react";
 import RecipeDetails from "../components/recipeDetails/RecipeDetails";
-
+import CheckBox from "../components/checkbox/CheckBox";
 function TestPage() {
     return (
         <div>
-            <RecipeDetails />
+            <CheckBox></CheckBox>
         </div>
     );
 }
