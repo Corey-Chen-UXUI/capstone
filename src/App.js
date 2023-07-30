@@ -6,7 +6,6 @@ import HomePage from "./pages/HomePage";
 import RecipeDetailPage from "./pages/RecipeDetailPage";
 import TestPage from "./pages/TestPage";
 import GroceryListPage from "./pages/GroceryListPage";
-import Nav from "./components/nav/Nav";
 
 function App() {
     const [groceryList, setGroceryList] = useState([]);
@@ -14,7 +13,6 @@ function App() {
     return (
         <BrowserRouter>
             <div className="App">
-                <Nav />
                 <Routes>
                     <Route path="/" element={<WelcomePage />}></Route>
                     <Route path="/recipes" element={<HomePage setGroceryList={setGroceryList} />}></Route>

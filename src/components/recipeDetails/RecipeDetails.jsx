@@ -34,7 +34,7 @@ function RecipeDetails() {
                 <section className="recipe__video" href="https://youtu.be/kKiYVLIk_9s"></section>
                 <section className="recipe__content">
                     <section className="recipe__image" alt="recipe-image">
-                        <section className="overlay"></section>
+                        <section className="recipe__overlay"></section>
                         <img className="recipe__playvideo" src={play} />
                     </section>
                     {/* accordion section */}

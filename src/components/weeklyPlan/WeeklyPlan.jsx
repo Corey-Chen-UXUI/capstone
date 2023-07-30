@@ -9,7 +9,6 @@ function WeeklyPlan({ setGroceryList }) {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [allRecipes, setAllRecipes] = useState([]);
     const [selectedAllergy, setSelectedAllergy] = useState([]);
-
     useEffect(() => {
         axios
             .get("http://localhost:5050/recipes/")
@@ -60,8 +59,6 @@ function WeeklyPlan({ setGroceryList }) {
             console.log(filterRecipes(selectedFilters, allRecipes));
         }
     }, [selectedFilters]);
-    // console.log(allRecipes);
-    // console.log(selectedFilters);
 
     return (
         <div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import GroceryList from "../components/groceryList/GroceryList";
+import Nav from "../components/nav/Nav";
 
 function GroceryListPage({ groceryList }) {
     const [recipes, setRecipes] = useState([]);
@@ -11,6 +12,7 @@ function GroceryListPage({ groceryList }) {
 
     return (
         <div>
+            <Nav />
             <GroceryList recipes={recipes} />
         </div>
     );
