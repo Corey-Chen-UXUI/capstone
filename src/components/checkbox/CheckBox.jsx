@@ -55,7 +55,13 @@ function CheckBox({ groceryitem }) {
                         }}
                     />
                 </animated.svg>
-                <p className="checkbox__text">{groceryitem}</p>
+                <p
+                    className="checkbox__text"
+                    onChange={() => {
+                        setIsChecked(!isChecked);
+                    }}>
+                    {groceryitem}
+                </p>
             </label>
         </>
     );
