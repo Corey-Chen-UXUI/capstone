@@ -11,6 +11,7 @@
         box-shadow: 5px 5px 5px black;
         position: fixed;
         width: 100%;
+        z-index: 10;
     }
     &__image {
         box-shadow: inset 5px 5px 10px $bg-black;
@@ -19,5 +20,23 @@
         background-position: center;
         background-size: cover;
         height: 80vh;
+        position: relative;
     }
+    &__playvideo {
+        font-size: 3rem;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0.8;
+        transform: translate(-50%, -50%);
+        z-index: 8;
+    }
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: auto;
+    height: 80vh;
+    z-index: 7;
 }

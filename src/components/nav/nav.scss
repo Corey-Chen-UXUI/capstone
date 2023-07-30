@@ -9,7 +9,10 @@
     padding: 1rem 2rem;
     background-color: $header-black;
     width: 100%;
+    box-shadow: -1px -6px 11px 6px #101000;
     &__text {
         color: white;
+        cursor: pointer;
+        text-decoration: none;
     }
 }

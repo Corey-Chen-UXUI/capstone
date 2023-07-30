@@ -2,6 +2,7 @@ import "./recipeDetails.scss";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import play from "../../assets/images/icons/play-video.png";
 import Acordion from "../accordion/Accordion";
 
 function RecipeDetails() {
@@ -29,9 +30,13 @@ function RecipeDetails() {
     return (
         <div>
             <section className="recipe">
-                <h1 className="recipe__header">{selectedRecipes.name}</h1>
+                <h1 className="recipe__header">{selectedRecipes.name}</h1>{" "}
+                <section className="recipe__video" href="https://youtu.be/kKiYVLIk_9s"></section>
                 <section className="recipe__content">
-                    <section className="recipe__image" alt="recipe-image"></section>
+                    <section className="recipe__image" alt="recipe-image">
+                        <section className="overlay"></section>
+                        <img className="recipe__playvideo" src={play} />
+                    </section>
                     {/* accordion section */}
                     <Acordion title="Description" content={selectedRecipes.description}></Acordion>
                     <Acordion title="Ingredients" content={selectedRecipes.ingredients}></Acordion>
