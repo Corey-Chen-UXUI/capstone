@@ -3,7 +3,7 @@ import "./preferenceModal.scss";
 
 function PreferenceModal({ handleFilterButtonClick, selectedFilters, selectedAllergy, onCancel }) {
     const [filteredRecipes, setFilteredRecipes] = useState([]);
-
+    console.log(handleFilterButtonClick);
     let filters = ["Chicken", "Pork", "Beef", "Fish", "Vegi"];
     let allergy = ["Shrimp", "Peach", "Peanuts or Nuts"];
 

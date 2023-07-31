@@ -3,20 +3,30 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import PreferenceModal from "../preferenceModal/PreferenceModal";
 
-function Nav() {
+function Nav(filterRecipes, handleFilterButtonClick, selectedFilters) {
     const [modal, setModal] = useState(false);
-    const handleOpenModal = () => {
-        setModal(true);
+    // const handleOpenModal = () => {
+    //     setModal(true);
+    // };
+
+    // const handleClosedModal = () => {
+    //     setModal(false);
+    // };
+    const toggleModal = () => {
+        modal === true ? setModal(false) : setModal(true);
     };
 
-    const handleClosedModal = () => {
-        setModal(false);
-    };
     return (
         <div>
-            {modal && <PreferenceModal onCancel={handleClosedModal} />}
+            {modal && (
+                <PreferenceModal
+                    onCancel={toggleModal}
+                    handleFilterButtonClick={handleFilterButtonClick}
+                    selectedFilters={selectedFilters}
+                />
+            )}
             <section className="navbar">
-                <h3 className="navbar__text" onClick={() => handleOpenModal()}>
+                <h3 className="navbar__text" onClick={toggleModal}>
                     Preference
                 </h3>
                 <Link to="/grocery">
