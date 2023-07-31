@@ -50,7 +50,6 @@ function App() {
         <BrowserRouter>
             <div className="App">
                 <Routes>
-                    {" "}
                     <Route path="/" element={<WelcomePage />}></Route>
                     <Route
                         path="/recipes"
