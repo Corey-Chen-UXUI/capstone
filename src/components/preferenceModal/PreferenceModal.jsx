@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./preferenceModal.scss";
 
-function PreferenceModal({ handleFilterButtonClick, selectedFilters, selectedAllergy, onCancel }) {
+function PreferenceModal({
+    handleFilterButtonClick,
+    handleFilterAllergyClick,
+    selectedFilters,
+    selectedAllergy,
+    onCancel,
+}) {
     const [filteredRecipes, setFilteredRecipes] = useState([]);
-    console.log(handleFilterButtonClick);
+
     let filters = ["Chicken", "Pork", "Beef", "Fish", "Vegi"];
     let allergy = ["Shrimp", "Peach", "Peanuts or Nuts"];
+
+    if (!selectedFilters) {
+        selectedFilters = "";
+    }
 
     return (
         <div>
@@ -36,9 +46,9 @@ function PreferenceModal({ handleFilterButtonClick, selectedFilters, selectedAll
                             <button
                                 name="allergy"
                                 className={`preference__filter${
-                                    selectedFilters?.includes(ingredient) ? "-active" : ""
+                                    selectedAllergy?.includes(ingredient) ? "-active" : ""
                                 }`}
-                                onClick={() => handleFilterButtonClick(ingredient)}
+                                onClick={() => handleFilterAllergyClick(ingredient)}
                                 key={`allergy-${idx}`}>
                                 {ingredient}
                             </button>
