@@ -76,13 +76,13 @@ function WeeklyPlan({ setGroceryList }) {
         return filteredRecipes;
     };
 
-    filterRecipes(selectedFilters, allRecipes);
+    // filterRecipes(selectedFilters, allRecipes);
 
-    //   useEffect(() => {
-    //     if (allRecipes.length > 0) {
-    //       console.log(filterRecipes(selectedFilters, allRecipes));
-    //     }
-    //   }, [selectedFilters]);
+    useEffect(() => {
+        if (allRecipes.length > 0) {
+            console.log(filterRecipes(selectedFilters, allRecipes));
+        }
+    }, [selectedFilters, selectedAllergy]);
 
     const Monday = [Math.floor(Math.random() * 21), Math.floor(Math.random() * 21), Math.floor(Math.random() * 21)];
 
