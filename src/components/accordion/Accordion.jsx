@@ -12,7 +12,7 @@ function Accordion({ title, content }) {
                 <section className="accordion__title">
                     <h2 className="accordion__title-text">{title}</h2>
                     <img
-                        className={clicked ? `accordion__arrow-close` : `accordion__arrow-open`}
+                        className={clicked ? `accordion__arrow-open` : `accordion__arrow-close`}
                         alt="chevron"
                         src={chevron}
                     />

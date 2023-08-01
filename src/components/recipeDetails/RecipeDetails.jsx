@@ -1,6 +1,7 @@
 import "./recipeDetails.scss";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import time from "../../assets/images/icons/time.png";
 import axios from "axios";
 import play from "../../assets/images/icons/play-video.png";
 import Acordion from "../accordion/Accordion";
