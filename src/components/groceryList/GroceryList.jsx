@@ -15,7 +15,7 @@ function GroceryList({ recipes }) {
                             {recipe.ingredients.map((ingredient, id) => {
                                 return (
                                     <>
-                                        <CheckBox groceryitem={ingredient} />
+                                        <CheckBox groceryitem={ingredient} key={id} />
                                     </>
                                 );
                             })}
