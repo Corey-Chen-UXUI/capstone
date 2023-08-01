@@ -16,6 +16,10 @@ function Nav(filterRecipes, handleFilterButtonClick, selectedFilters) {
                 <NavLink to="/grocery">
                     <h3 className="navbar__text">Grocery</h3>
                 </NavLink>
+                <NavLink to="/">
+                    <h3 className="navbar__text">Home</h3>
+                </NavLink>
+
                 <NavLink to="/recipes">
                     <h3 className="navbar__text">Weekly Menu</h3>
                 </NavLink>

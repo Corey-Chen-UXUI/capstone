@@ -41,7 +41,7 @@ function RecipeDetails() {
                     </section>
                     {/* accordion section */}
                     <Acordion title="Description" content={selectedRecipes.description}></Acordion>
-                    <Acordion title="ingredients" content={selectedRecipes.ingredients}></Acordion>
+                    <Acordion title="Ingredients" content={selectedRecipes.ingredients}></Acordion>
                     <Acordion title="Steps" content={selectedRecipes.steps}></Acordion>
                     <Acordion title="Prep Time" content={selectedRecipes.prep_time}></Acordion>
                     <Acordion title="Cook Time" content={selectedRecipes.cook_time}></Acordion>
