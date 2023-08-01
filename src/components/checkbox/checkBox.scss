@@ -1,16 +1,15 @@
 @use "../../styles/index.scss" as *;
 .checkbox {
-    // display: inline-block;
     height: 1.5rem;
     width: 1.5rem;
     background: transparent;
     border: 1px solid white;
     border-radius: 1px;
     margin-right: 1rem;
-
     &__text {
         display: inline;
         cursor: pointer;
+        margin-top: 2px;
     }
 }
 

@@ -1,5 +1,6 @@
 import "./groceryList.scss";
 import CheckBox from "../checkbox/CheckBox";
+import { Link } from "react-router-dom";
 
 function GroceryList({ recipes }) {
     return (
@@ -9,13 +10,15 @@ function GroceryList({ recipes }) {
                 {recipes.map((recipe) => {
                     return (
                         <>
-                            <h2 className="grocery__title" key={recipe.id}>
-                                {recipe.name}
-                            </h2>
-                            {recipe.ingredients.map((ingredient, id) => {
+                            <Link to={`/recipes/${recipe.id}`}>
+                                <h2 className="grocery__title" key={recipe.id}>
+                                    {recipe.name}
+                                </h2>
+                            </Link>
+                            {recipe.ingredients.map((ingredient) => {
                                 return (
                                     <>
-                                        <CheckBox groceryitem={ingredient} key={id} />
+                                        <CheckBox groceryitem={ingredient} />
                                     </>
                                 );
                             })}

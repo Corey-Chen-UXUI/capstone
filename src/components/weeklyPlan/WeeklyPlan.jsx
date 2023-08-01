@@ -156,7 +156,7 @@ function WeeklyPlan({ setGroceryList }) {
             <h1 className="calendar__header">Weekly Menu</h1>{" "}
             <h3 className="calendar__link" onClick={toggleModal}>
                 Edit
-            </h3>{" "}
+            </h3>
             <section className="calendar">
                 <section className="calendar__day">
                     <h2 className="calendar__day-title">Monday</h2>
