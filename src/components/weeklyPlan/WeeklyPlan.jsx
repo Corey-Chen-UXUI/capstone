@@ -9,6 +9,11 @@ function WeeklyPlan({ setGroceryList }) {
     const [selectedFilters, setSelectedFilters] = useState(["Chicken"]);
     const [allRecipes, setAllRecipes] = useState([]);
     const [selectedAllergy, setSelectedAllergy] = useState([]);
+    const [modal, setModal] = useState(false);
+    const toggleModal = () => {
+        modal === true ? setModal(false) : setModal(true);
+    };
+
     useEffect(() => {
         axios
             .get("http://localhost:5050/recipes/")
@@ -115,18 +120,46 @@ function WeeklyPlan({ setGroceryList }) {
     num = Math.floor(Math.random() * array.length);
     let ThursdayThree = array.splice(num, 1);
 
+    num = Math.floor(Math.random() * array.length);
+    let FridayOne = array.splice(num, 1);
+    num = Math.floor(Math.random() * array.length);
+    let FridayTwo = array.splice(num, 1);
+    num = Math.floor(Math.random() * array.length);
+    let FridayThree = array.splice(num, 1);
+
+    num = Math.floor(Math.random() * array.length);
+    let SaturdayOne = array.splice(num, 1);
+    num = Math.floor(Math.random() * array.length);
+    let SaturdayTwo = array.splice(num, 1);
+    num = Math.floor(Math.random() * array.length);
+    let SaturdayThree = array.splice(num, 1);
+
+    num = Math.floor(Math.random() * array.length);
+    let SundayOne = array.splice(num, 1);
+    num = Math.floor(Math.random() * array.length);
+    let SundayTwo = array.splice(num, 1);
+    num = Math.floor(Math.random() * array.length);
+    let SundayThree = array.splice(num, 1);
+
     return (
         <div>
-            <PreferenceModal
-                handleFilterButtonClick={handleFilterButtonClick}
-                selectedFilters={selectedFilters}
-                selectedAllergy={selectedAllergy}
-                handleFilterAllergyClick={handleFilterAllergyClick}
-            />
+            {modal && (
+                <PreferenceModal
+                    handleFilterButtonClick={handleFilterButtonClick}
+                    selectedFilters={selectedFilters}
+                    selectedAllergy={selectedAllergy}
+                    handleFilterAllergyClick={handleFilterAllergyClick}
+                    onCancel={toggleModal}
+                />
+            )}
+
             <h1 className="calendar__header">Weekly Menu</h1>
             <section className="calendar">
+                <h3 className="calendar__link" onClick={toggleModal}>
+                    Edit
+                </h3>
                 <section className="calendar__day">
-                    <h2 className="calendar__day-title">Monday - date</h2>
+                    <h2 className="calendar__day-title">Monday</h2>
                     <section className="calendar__recipes">
                         <Link to={`/recipes/${allRecipes[MondayOne]?.id}`}>
                             <img
@@ -152,51 +185,159 @@ function WeeklyPlan({ setGroceryList }) {
                     </section>
                 </section>
                 <section className="calendar__day">
-                    <h2 className="calendar__day-title">Tuesday - date</h2>
+                    <h2 className="calendar__day-title">Tuesday</h2>
                     <section className="calendar__recipes">
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
+                        <Link to={`/recipes/${allRecipes[TuesdayOne]?.id}`}>
+                            <img
+                                src={allRecipes[TuesdayOne]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[TuesdayTwo]?.id}`}>
+                            <img
+                                src={allRecipes[TuesdayTwo]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[TuesdayThree]?.id}`}>
+                            <img
+                                src={allRecipes[TuesdayThree]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
                     </section>
                 </section>
                 <section className="calendar__day">
-                    <h2 className="calendar__day-title">Wednesday - date</h2>
+                    <h2 className="calendar__day-title">Wednesday</h2>
                     <section className="calendar__recipes">
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
+                        <Link to={`/recipes/${allRecipes[WednesdayOne]?.id}`}>
+                            <img
+                                src={allRecipes[WednesdayOne]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[WednesdayTwo]?.id}`}>
+                            <img
+                                src={allRecipes[WednesdayTwo]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[WednesdayThree]?.id}`}>
+                            <img
+                                src={allRecipes[WednesdayThree]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
                     </section>
                 </section>
                 <section className="calendar__day">
-                    <h2 className="calendar__day-title">Thursday - date</h2>
+                    <h2 className="calendar__day-title">Thursday</h2>
                     <section className="calendar__recipes">
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
+                        <Link to={`/recipes/${allRecipes[ThursdayOne]?.id}`}>
+                            <img
+                                src={allRecipes[ThursdayOne]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[ThursdayTwo]?.id}`}>
+                            <img
+                                src={allRecipes[ThursdayTwo]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[ThursdayThree]?.id}`}>
+                            <img
+                                src={allRecipes[ThursdayThree]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
                     </section>
                 </section>
                 <section className="calendar__day">
-                    <h2 className="calendar__day-title">Friday - date</h2>
+                    <h2 className="calendar__day-title">Friday</h2>
                     <section className="calendar__recipes">
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
+                        <Link to={`/recipes/${allRecipes[FridayOne]?.id}`}>
+                            <img
+                                src={allRecipes[FridayOne]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[FridayTwo]?.id}`}>
+                            <img
+                                src={allRecipes[FridayTwo]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[FridayThree]?.id}`}>
+                            <img
+                                src={allRecipes[FridayThree]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
                     </section>
                 </section>
                 <section className="calendar__day">
-                    <h2 className="calendar__day-title">Saturday - date</h2>
+                    <h2 className="calendar__day-title">Saturday</h2>
                     <section className="calendar__recipes">
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
+                        <Link to={`/recipes/${allRecipes[SaturdayOne]?.id}`}>
+                            <img
+                                src={allRecipes[SaturdayOne]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[SaturdayTwo]?.id}`}>
+                            <img
+                                src={allRecipes[SaturdayTwo]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[SaturdayThree]?.id}`}>
+                            <img
+                                src={allRecipes[SaturdayThree]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
                     </section>
                 </section>
                 <section className="calendar__day">
-                    <h2 className="calendar__day-title">Sunday - date</h2>
+                    <h2 className="calendar__day-title">Sunday</h2>
                     <section className="calendar__recipes">
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
-                        <img src={recipe1} className="calendar__recipe" alt="alt-palceholder" />
+                        <Link to={`/recipes/${allRecipes[SundayOne]?.id}`}>
+                            <img
+                                src={allRecipes[SundayOne]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[SundayTwo]?.id}`}>
+                            <img
+                                src={allRecipes[SundayTwo]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
+                        <Link to={`/recipes/${allRecipes[SundayThree]?.id}`}>
+                            <img
+                                src={allRecipes[SundayThree]?.image_url}
+                                className="calendar__recipe"
+                                alt="alt-palceholder"
+                            />
+                        </Link>
                     </section>
                 </section>
             </section>

@@ -24,23 +24,23 @@ function RecipeDetails() {
     }, [recipeId]);
 
     if (!selectedRecipes) {
-        return <p>Loading 2</p>;
+        return <p>Loading recipe</p>;
     }
 
     return (
         <div>
             <section className="recipe">
-                <h1 className="recipe__header">{selectedRecipes.name}</h1>{" "}
+                <h1 className="recipe__header">{selectedRecipes.name}</h1>
                 <section className="recipe__video" href="https://youtu.be/kKiYVLIk_9s"></section>
                 <section className="recipe__content">
                     <section className="recipe__image" alt="recipe-image">
+                        <img className="recipe__videoimage" src={selectedRecipes.image_url} />
                         <section className="recipe__overlay"></section>
                         <img className="recipe__playvideo" src={play} />
                     </section>
                     {/* accordion section */}
                     <Acordion title="Description" content={selectedRecipes.description}></Acordion>
                     <Acordion title="ingredients" content={selectedRecipes.ingredients}></Acordion>
-
                     <Acordion title="Steps" content={selectedRecipes.steps}></Acordion>
                     <Acordion title="Prep Time" content={selectedRecipes.prep_time}></Acordion>
                     <Acordion title="Cook Time" content={selectedRecipes.cook_time}></Acordion>

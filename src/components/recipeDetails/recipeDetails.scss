@@ -15,11 +15,10 @@
     }
     &__image {
         box-shadow: inset 5px 5px 10px $bg-black;
-        background-image: url("../../assets/images/recipe/avgolemono_soup.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        height: 80vh;
+        height: 60vh;
         position: relative;
     }
     &__playvideo {
@@ -34,9 +33,17 @@
     }
     &__overlay {
         background-color: rgba(0, 0, 0, 0.2);
-        position: relative;
-        width: auto;
-        height: 80vh;
+        position: absolute;
+        width: 100vw;
+        height: 60vh;
         z-index: 7;
+    }
+    &__videoimage {
+        display: block;
+        object-fit: cover;
+        position: absolute;
+        width: 100vw;
+        height: 60vh;
+        z-index: 5;
     }
 }
