@@ -89,6 +89,7 @@ function WeeklyPlan({ setGroceryList }) {
         }
     }, [selectedFilters, selectedAllergy]);
 
+    //random pick the recipes based on the selected list
     const Monday = [Math.floor(Math.random() * 21), Math.floor(Math.random() * 21), Math.floor(Math.random() * 21)];
 
     let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
@@ -152,12 +153,11 @@ function WeeklyPlan({ setGroceryList }) {
                     onCancel={toggleModal}
                 />
             )}
-
-            <h1 className="calendar__header">Weekly Menu</h1>
+            <h1 className="calendar__header">Weekly Menu</h1>{" "}
+            <h3 className="calendar__link" onClick={toggleModal}>
+                Edit
+            </h3>{" "}
             <section className="calendar">
-                <h3 className="calendar__link" onClick={toggleModal}>
-                    Edit
-                </h3>
                 <section className="calendar__day">
                     <h2 className="calendar__day-title">Monday</h2>
                     <section className="calendar__recipes">

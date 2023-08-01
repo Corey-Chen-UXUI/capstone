@@ -16,3 +16,7 @@
         text-decoration: none;
     }
 }
+.active {
+    border-bottom: 3px $primary-yellow solid;
+    padding-bottom: 5px;
+}
