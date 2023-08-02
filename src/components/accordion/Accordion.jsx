@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "./accordion.scss";
 import chevron from "../../assets/images/icons/chevron.png";
 
-function Accordion({ title, content }) {
+function Accordion({ title, content, isSteps }) {
     const [clicked, setClicked] = useState(false);
 
     return (
