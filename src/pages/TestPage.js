@@ -1,15 +1,11 @@
 import React from "react";
-import RecipeDetails from "../components/recipeDetails/RecipeDetails";
-import CheckBox from "../components/checkbox/CheckBox";
-import VideoPlayer from "../components/videoPlayer/VideoPlayer";
-import LoginModal from "../components/loginModal/LoginModal";
+import AuthPage from "../pages/AuthPage";
+import LoginModal from "../components/login/Login";
 
 function TestPage() {
     return (
         <div>
-            <LoginModal></LoginModal>
-            <VideoPlayer width={100} />
-            <CheckBox></CheckBox>
+            <AuthPage />
         </div>
     );
 }

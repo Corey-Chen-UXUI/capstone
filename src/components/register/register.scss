@@ -1,0 +1,52 @@
+@use "../../styles/index" as *;
+
+.form-wrap {
+    background-color: $bg-black;
+    color: $white;
+    padding: 5rem 2rem;
+    height: 100vh;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    &__title {
+        color: $primary-yellow;
+        width: 80vw;
+        margin-bottom: 2rem;
+    }
+    &-group {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.25rem;
+    }
+    &__link {
+        text-decoration: underline;
+        color: $primary-yellow;
+        &-wrap {
+            margin-top: 1rem;
+            display: flex;
+        }
+    }
+}
+.btn {
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+}
+.btn-primary {
+    background-color: $primary-yellow;
+}
+
+input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #676767;
+    outline: none;
+    &:focus {
+        border: solid 1px $primary-yellow;
+    }
+}

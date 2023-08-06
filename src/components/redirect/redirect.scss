@@ -1,0 +1,15 @@
+@use "../../styles/index.scss" as *;
+.redirect {
+    background-color: $bg-black;
+    color: $white;
+    height: 100vh;
+    padding: 5rem 2rem;
+
+    &__title {
+        margin-bottom: 1rem;
+        color: $primary-yellow;
+    }
+    &__text {
+        margin-bottom: 2rem;
+    }
+}

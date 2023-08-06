@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import RecipeDetailPage from "./pages/RecipeDetailPage";
 import TestPage from "./pages/TestPage";
 import GroceryListPage from "./pages/GroceryListPage";
-import Nav from "./components/nav/Nav";
+import AuthPage from "./pages/AuthPage";
 
 function App() {
     const [groceryList, setGroceryList] = useState([]);
@@ -34,14 +34,7 @@ function App() {
                 console.log(recipe.ingredients.includes(ingredient));
             }
         }
-        //allergy remove
-        // for (let allergies of selectedAllergy) {
-        //     for (let recipe of recipes) {
-        //         if (recipe.ingredients.includes(allergies)) {
-        //             filteredRecipes.remove(recipe);
-        //         }
-        //     }
-        // }
+
         localStorage.setItem("recipes", JSON.stringify(filteredRecipes));
         return filteredRecipes;
     };
@@ -87,6 +80,7 @@ function App() {
                                 handleFilterButtonClick={handleFilterButtonClick}
                             />
                         }></Route>
+                    <Route path="/login" element={<AuthPage />}></Route>
                     <Route
                         path="/test"
                         element={
