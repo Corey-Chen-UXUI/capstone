@@ -29,7 +29,7 @@ function Profile() {
             });
     }, []);
 
-    return isLoading ? <h1>Loading...</h1> : <Redirect />;
+    return isLoading ? <h1>Loading...</h1> : <Redirect userInfo={userInfo} />;
 }
 
 export default Profile;

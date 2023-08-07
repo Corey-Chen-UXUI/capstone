@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Welcome() {
     return (
         <div>
-            <Link to={"./recipes"}>
+            <Link to={"./login"}>
                 <section className="welcome">
                     <section className="welcome__border">
                         <h1 className="welcome__title">Meal plan just for you</h1>

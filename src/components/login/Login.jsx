@@ -40,10 +40,10 @@ function Login(props) {
             {isLoginError && <label style={{ color: "red" }}>{errorMessage}</label>}
             <form onSubmit={handleLogin} className="form">
                 <div className="form-group">
-                    Username: <input type="text" name="username" required />
+                    Username: <input type="text" name="username" required placeholder="You account name" />
                 </div>
                 <div className="form-group">
-                    Password: <input type="password" name="password" required />
+                    Password: <input type="password" name="password" required placeholder="********" />
                 </div>
                 <button className="btn btn-primary" type="submit">
                     Login
